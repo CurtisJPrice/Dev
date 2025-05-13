@@ -16,9 +16,9 @@ mongoose.connect(process.env.MONGO_URI)
   .then(() => console.log('✅ MongoDB connected'))
   .catch(err => console.error('❌ MongoDB connection error:', err));
 
-app.get('/', (req, res) => {
-  res.send('CSE341 Contacts API Running');
-});
+//app.get('/', (req, res) => {
+  //res.send('CSE341 Contacts API Running');
+//});
 
 app.listen(PORT, () => {
   console.log(`🚀 Server is running on port ${PORT}`);
