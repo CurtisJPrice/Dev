@@ -1,26 +1,13 @@
 {
-  "name": "cse341_project",
+  "name": "cse341-deploy-ready",
   "version": "1.0.0",
   "main": "server.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "start": "node server.js"
   },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/CurtisJPrice/Dev.git"
-  },
-  "keywords": [],
-  "author": "",
-  "license": "ISC",
-  "bugs": {
-    "url": "https://github.com/CurtisJPrice/Dev/issues"
-  },
-  "homepage": "https://github.com/CurtisJPrice/Dev#readme",
-  "description": "",
   "dependencies": {
     "dotenv": "^16.5.0",
     "express": "^5.1.0",
-    "mongodb": "^6.16.0",
     "mongoose": "^8.14.2"
   }
 }

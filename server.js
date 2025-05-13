@@ -1,20 +1,23 @@
+require('dotenv').config();
 const express = require('express');
-const mongodb = require('./db/database');
+const mongoose = require('mongoose');
+
 const app = express();
+const PORT = process.env.PORT || 3000;
 
-const port = process.env.PORT || 3000;
-
-app.use('/', require('./routes'));
-
-
-mongodb.initDb((err) => {
-    if (err) {
-        console.log(err);
-    }
-    else {
-        app.listen(port, () => {
-    console.log(`Database is listening and node is running on port ${port}`)});
-    }
+mongoose.connect(process.env.MONGO_URI, {
+  useNewUrlParser: true,
+  useUnifiedTopology: true,
+}).then(() => {
+  console.log('✅ MongoDB connected');
+}).catch(err => {
+  console.error('❌ MongoDB connection error:', err);
 });
 
+app.get('/', (req, res) => {
+  res.send('CSE341 App is Running!');
+});
 
+app.listen(PORT, () => {
+  console.log(`🚀 Server is running on port ${PORT}`);
+});
