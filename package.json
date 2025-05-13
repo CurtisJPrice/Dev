@@ -1,6 +1,26 @@
 {
+  "name": "cse341_project",
+  "version": "1.0.0",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/CurtisJPrice/Dev.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/CurtisJPrice/Dev/issues"
+  },
+  "homepage": "https://github.com/CurtisJPrice/Dev#readme",
+  "description": "",
   "dependencies": {
     "dotenv": "^16.5.0",
-    "mongodb": "^6.16.0"
+    "express": "^5.1.0",
+    "mongodb": "^6.16.0",
+    "mongoose": "^8.14.2"
   }
 }
