@@ -1,5 +1,5 @@
 {
-  "name": "cse341-deploy-ready",
+  "name": "cse341-contacts-api",
   "version": "1.0.0",
   "main": "server.js",
   "scripts": {
