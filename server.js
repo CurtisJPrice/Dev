@@ -8,13 +8,13 @@ const app = express();
 const PORT = process.env.PORT || 3000;
 
 // Middleware
-app.use(express.static('public')); // Serves index.html, style.css, etc.
+app.use(express.static('public'));
 app.use(express.json());
 
 // Routes
 app.use('/contacts', contactsRoutes);
 
-// Optional: Serve index.html on root
+// Serve front-end index.html
 app.get('/', (req, res) => {
   res.sendFile(path.join(__dirname, 'public', 'index.html'));
 });
