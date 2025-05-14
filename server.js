@@ -21,7 +21,16 @@ app.get('/', (req, res) => {
 
 // DB Connection
 mongoose.connect(process.env.MONGO_URI)
-  .then(() => console.log('✅ MongoDB connected'))
+  .then(() => {
+    console.log('✅ MongoDB connected');
+    mongoose.connection.db.listCollections().toArray((err, collections) => {
+      if (err) {
+        console.error('MongoDB connection error:', err);
+      } else {
+        console.log('Collections:', collections);
+      }
+    });
+  })
   .catch(err => console.error('❌ MongoDB connection error:', err));
 
 // Start server
