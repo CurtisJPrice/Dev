@@ -1,15 +1,27 @@
 {
-  "name": "cse341-contacts-api",
+  "name": "341-cse-project1",
   "version": "1.0.0",
+  "description": "My first project",
   "main": "server.js",
   "scripts": {
-    "start": "concurrently \"node server.js\" \"node index.js\""
+    "test": "echo \"Error: no test specified\" && exit 1"
   },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/narradoresdigitales/341-cse-project1.git"
+  },
+  "author": "Marcus 'Sil' Palmer",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/narradoresdigitales/341-cse-project1/issues"
+  },
+  "homepage": "https://github.com/narradoresdigitales/341-cse-project1#readme",
   "dependencies": {
-    "concurrently": "^9.1.2",
+    "body-parser": "^2.2.0",
     "dotenv": "^16.5.0",
     "express": "^5.1.0",
     "mongodb": "^6.16.0",
-    "mongoose": "^8.14.3"
+    "swagger-autogen": "^2.23.7",
+    "swagger-ui-express": "^5.0.1"
   }
 }

@@ -1,50 +1,36 @@
-require('dotenv').config();
 const express = require('express');
-const mongoose = require('mongoose');
-const path = require('path');
-const contactsRoutes = require('./routes/contacts');
-
+const bodyParser = require('body-parser');
+const mongodb = require('./data/database');
 const app = express();
-const PORT = process.env.PORT || 3000;
 
-// Middleware
-app.use(express.static('public'));
-app.use(express.json());
+const port = process.env.PORT || 3001;
 
-// Debug log for startup
-console.log('🔧 Middleware and routes loading...');
 
-// Routes
-app.use('/contacts', (req, res, next) => {
-  console.log('📡 /contacts route hit');
-  next();
-}, contactsRoutes);
+app.use(bodyParser.json());
 
-// Serve front-end index.html
-app.get('/', (req, res) => {
-  console.log('📄 Serving index.html from /public');
-  res.sendFile(path.join(__dirname, 'public', 'index.html'));
+app.use((req, res, next) => {
+    res.setHeader('Access-Control-Allow-Origin', '*');
+    res.setHeader(
+        'Access-Control-Allow-Headers',
+        'Origin, X-Requested-With, Content-Type, Accept, Z-Key'
+    );
+    res.setHeader('Access-Control-Allow-Methods', 'GET, POST, PUT, DELETE, OPTIONS');
+    next();
 });
 
-// MongoDB Connection (clean, no deprecated options)
-mongoose.connect(process.env.MONGO_URI)
-  .then(() => {
-    console.log('✅ MongoDB connected successfully');
-    mongoose.connection.db.listCollections().toArray((err, collections) => {
-      if (err) {
-        console.error('⚠️ Error listing Mongo collections:', err);
-      } else {
-        console.log('📦 Mongo collections:', collections.map(c => c.name));
-      }
-    });
-  })
-  .catch(err => {
-    console.error('❌ Failed to connect to MongoDB');
-    console.error(err);
-    process.exit(1); // Exit on DB failure
-  });
+app.use('/', require('./routes'));
 
-// Start server
-app.listen(PORT, () => {
-  console.log(`🚀 Server is running on http://localhost:${PORT} or deployed port ${PORT}`);
+
+mongodb.initDb((err) => {
+    if(err) {
+        console.log(err);
+    }
+    else {
+        app.listen(port, () => {console.log(`Database is listening and node Running on port ${port}`)});
+    }
 });
+
+
+
+
+
