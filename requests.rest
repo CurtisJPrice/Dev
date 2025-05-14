@@ -1,0 +1,75 @@
+// Description: This file contains REST API requests for managing contacts.
+// It includes requests to get all contacts and a single contact by ID.
+
+//LOCALHOST:3000
+### Get all contacts
+GET http://localhost:3000/contacts
+
+### Get single contact
+GET http://localhost:3000/contacts/681cc919fc672da58d0f32c7
+
+### Create contact
+POST http://localhost:3000/contacts
+Content-Type: application/json
+
+{
+  "firstName": "Alice",
+  "lastName": "Smith",
+  "email": "alice@example.com",
+  "favoriteColor": "purple",
+  "birthday": "1995-05-15"
+}
+
+### Update contact
+PUT http://localhost:3000/contacts/682509a0e927375127a2e277
+Content-Type: application/json
+
+{
+  "firstName": "Isaac",
+  "lastName": "Stuart",
+  "email": "isaac@example.com",
+  "favoriteColor": "Red",
+  "birthday": "1990-01-01"
+}
+
+### Delete contact
+DELETE http://localhost:3000/contacts/682509a0e927375127a2e277
+
+
+
+////////////////////////////////////////////////////////////
+
+
+//PRODUCTION: RENDER
+### Get all contacts
+GET https://cse341-contacts-api-frsq.onrender.com/contacts
+
+### Get single contact
+GET https://cse341-contacts-api-frsq.onrender.com/contacts/681cc919fc672da58d0f32c7
+
+### Create contact
+POST https://cse341-contacts-api-frsq.onrender.com/contacts
+Content-Type: application/json
+
+{
+  "firstName": "Alice",
+  "lastName": "Smith",
+  "email": "alice@example.com",
+  "favoriteColor": "purple",
+  "birthday": "1995-05-15"
+}
+
+### Update contact
+PUT https://cse341-contacts-api-frsq.onrender.com/contacts/682509a0e927375127a2e277
+Content-Type: application/json
+
+{
+  "firstName": "Isaac",
+  "lastName": "Stuart",
+  "email": "isaac@example.com",
+  "favoriteColor": "Red",
+  "birthday": "1990-01-01"
+}
+
+### Delete contact
+DELETE https://cse341-contacts-api-frsq.onrender.com/contacts/682509a0e927375127a2e277
