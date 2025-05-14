@@ -1,19 +1,26 @@
-// Description: this file contains the routes for handling contacts in the application.
-// It includes GET endpoints to retrieve all contacts and a single contact by ID.
-const express = require("express");
+const express = require('express');
 const router = express.Router();
-const {
-  getAllContacts,
-  getContact,
-  createContact,
-  updateContact,
-  deleteContact
-} = require("../controllers/contacts");
-// GET endpoints
-router.get("/", getAllContacts);
-router.get("/:id", getContact);
-router.post("/", createContact);
-router.put("/:id", updateContact);
-router.delete("/:id", deleteContact);
+const Contact = require('../models/contact');
+
+// GET all contacts
+router.get('/', async (req, res) => {
+  try {
+    const contacts = await Contact.find();
+    res.json(contacts);
+  } catch (err) {
+    res.status(500).json({ message: err.message });
+  }
+});
+
+// GET contact by ID
+router.get('/:id', async (req, res) => {
+  try {
+    const contact = await Contact.findById(req.params.id);
+    if (!contact) return res.status(404).json({ message: 'Contact not found' });
+    res.json(contact);
+  } catch (err) {
+    res.status(500).json({ message: err.message });
+  }
+});
 
 module.exports = router;

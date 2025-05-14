@@ -1,27 +1,40 @@
-// Description: This file contains the server configuration and route handling for the Contacts API.
-// It sets up the Express server, connects to the MongoDB database, and defines the routes for handling contacts.
-require("dotenv").config();
-const express = require("express");
-const connectDB = require("./config/db");
-const contactsRouter = require("./routes/contacts");
+require('dotenv').config();
+const express = require('express');
+const mongoose = require('mongoose');
+const path = require('path');
+const contactsRoutes = require('./routes/contacts');
 
 const app = express();
-
-// Add root route to verify server status
-app.get("/", (req, res) => {
-  res.send("Contacts API - CSE341 Project");
-});
+const PORT = process.env.PORT || 3000;
 
 // Middleware
+app.use(express.static('public'));
 app.use(express.json());
 
-// Database connection
-connectDB();
-
 // Routes
-app.use("/contacts", contactsRouter);
+app.use('/contacts', contactsRoutes);
 
-const port = process.env.PORT || 3000;
-app.listen(port, () =>
-  console.log(`Server running at http://localhost:${port}`)
-);
+// Serve front-end index.html
+app.get('/', (req, res) => {
+  res.sendFile(path.join(__dirname, 'public', 'index.html'));
+});
+
+// DB Connection
+mongoose.connect(process.env.MONGO_URI)
+  .then(() => {
+    console.log('✅ MongoDB connected');
+    mongoose.connection.db.listCollections().toArray((err, collections) => {
+      if (err) {
+        console.error('MongoDB connection error:', err);
+      } else {
+        console.log('Collections:', collections);
+      }
+    });
+  })
+  .catch(err => console.error('❌ MongoDB connection error:', err));
+
+// Start server
+console.log('🟡 About to start the server...');
+app.listen(PORT, () => {
+  console.log(`🚀 Server is running on port ${PORT}`);
+});
