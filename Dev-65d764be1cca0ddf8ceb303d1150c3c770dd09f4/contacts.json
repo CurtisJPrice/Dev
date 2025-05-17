@@ -1,0 +1,72 @@
+{
+    "contacts": [{
+        "firstName": "Mike",
+        "lastName": "Wallace",
+        "email": "pikamw@gmail.com",
+        "favoriteColor": "cyan",
+        "birthday": "2002-08-12"
+    },
+    {
+        "firstName": "Jason",
+        "lastName": "Rusk",
+        "email": "jager@yahoo.com",
+        "favoriteColor": "blue",
+        "birthday": "1978-10-10"
+    },
+    {
+        "firstName": "Chloe",
+        "lastName": "Rusk",
+        "email": "crbunnyart@gmail.com",
+        "favoriteColor": "purple",
+        "birthday": "2001-05-02"
+    },
+    {
+        "firstName": "Jana",
+        "lastName": "Rodenbaugh",
+        "email": "rodiette@gmail.com",
+        "favoriteColor": "green",
+        "birthday": "1975-03-20"
+    },
+    {
+        "firstName": "Hugo",
+        "lastName": "Martinez",
+        "email": "hugo.martinez@vortex.com",
+        "favoriteColor": "red",
+        "birthday": "1966-08-14"
+    },
+    {
+        "firstName": "Jared",
+        "lastName": "Smith",
+        "email": "jsmith528@hotmail.com",
+        "favoriteColor": "orange",
+        "birthday": "2002-11-08"
+    },
+    {
+        "firstName": "Gavin",
+        "lastName": "Martin",
+        "email": "martin.gavin@gmail.com",
+        "favoriteColor": "yellow",
+        "birthday": "1999-06-28"
+    },
+    {
+        "firstName": "Sasha",
+        "lastName": "Reynolds",
+        "email": "crunchy_pear@aol.com",
+        "favoriteColor": "green",
+        "birthday": "1989-02-13"
+    },
+    {
+        "firstName": "Melanie",
+        "lastName": "Young",
+        "email": "hippolover41@live.com",
+        "favoriteColor": "purple",
+        "birthday": "1984-07-06"
+    },
+    {
+        "firstName": "Justin",
+        "lastName": "Harker",
+        "email": "fishbowlthinker@yahoo.com",
+        "favoriteColor": "orange",
+        "birthday": "2001-05-07"
+    }]
+}
