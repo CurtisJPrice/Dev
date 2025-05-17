@@ -1,3 +1,5 @@
+require('dotenv').config();
+
 const express = require('express');
 const bodyParser = require('body-parser');
 const mongodb = require('./data/database');
@@ -17,6 +19,8 @@ app.use((req, res, next) => {
     res.setHeader('Access-Control-Allow-Methods', 'GET, POST, PUT, DELETE, OPTIONS');
     next();
 });
+
+console.log("MongoDB URI:", process.env.MONGODB_URL);
 
 app.use('/', require('./routes'));
 
