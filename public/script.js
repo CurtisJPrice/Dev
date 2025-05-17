@@ -11,13 +11,13 @@ const getData = async () => {
 };
 
 function displayAllData(data) {
-  displayProfessionalName(data.professionalName);
-  displayImage(data.base64Image);
-  displayPrimaryDescription(data);
-  displayWorkDescription(data);
-  displayLinkTitleText(data);
-  displayLinkedInLink(data);
-  displayGitHubLink(data);
+  //displayProfessionalName(data.professionalName);
+  //displayImage(data.base64Image);
+  //displayPrimaryDescription(data);
+  //displayWorkDescription(data);
+  //displayLinkTitleText(data);
+  //displayLinkedInLink(data);
+  //displayGitHubLink(data);
 }
 
 function displayProfessionalName(n) {
