@@ -1,5 +1,5 @@
 {
-  "name": "341-cse-project1",
+  "name": "cse341",
   "version": "1.0.0",
   "description": "My first project",
   "main": "server.js",
@@ -8,14 +8,14 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/narradoresdigitales/341-cse-project1.git"
+    "url": "git+https://github.com/CurtisJPrice/Dev.git"
   },
   "author": "Marcus 'Sil' Palmer",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/narradoresdigitales/341-cse-project1/issues"
+    "url": "https://github.com/CurtisJPrice/Dev/issues"
   },
-  "homepage": "https://github.com/narradoresdigitales/341-cse-project1#readme",
+  "homepage": "https://github.com/CurtisJPrice/Dev#readme",
   "dependencies": {
     "body-parser": "^2.2.0",
     "dotenv": "^16.5.0",
