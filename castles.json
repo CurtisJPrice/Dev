@@ -1,0 +1,92 @@
+[
+  {
+    "name": "Imperial Fortress",
+    "location": "Northern China",
+    "builtYear": 1100,
+    "hasMoat": true,
+    "rooms": 50,
+    "legend": "Built to protect from invaders.",
+    "princessResident": "682d9555679e09d3f9c0f8c5"
+  },
+  {
+    "name": "Heart Castle",
+    "location": "Kumandra",
+    "builtYear": 1200,
+    "hasMoat": false,
+    "rooms": 40,
+    "legend": "Protects the Dragon Gem.",
+    "princessResident": "682d9555679e09d3f9c0f8c4"
+  },
+  {
+    "name": "Rosewood Palace",
+    "location": "The Moors",
+    "builtYear": 1350,
+    "hasMoat": true,
+    "rooms": 65,
+    "legend": "Surrounded by thorns.",
+    "princessResident": "682d9555679e09d3f9c0f8c6"
+  },
+  {
+    "name": "Library Tower",
+    "location": "France",
+    "builtYear": 1400,
+    "hasMoat": false,
+    "rooms": 30,
+    "legend": "Endless magical books.",
+    "princessResident": "682d9555679e09d3f9c0f8c2"
+  },
+  {
+    "name": "Pumpkin Palace",
+    "location": "Unknown",
+    "builtYear": 1300,
+    "hasMoat": false,
+    "rooms": 20,
+    "legend": "Cinderella's magical origin.",
+    "princessResident": "682d9555679e09d3f9c0f8c0"
+  },
+  {
+    "name": "Willow Castle",
+    "location": "Powhatan Forest",
+    "builtYear": 1000,
+    "hasMoat": true,
+    "rooms": 25,
+    "legend": "Sacred tree whispers to the wind.",
+    "princessResident": "682d9555679e09d3f9c0f8c7"
+  },
+  {
+    "name": "Coral Fortress",
+    "location": "Atlantica",
+    "builtYear": 1600,
+    "hasMoat": false,
+    "rooms": 70,
+    "legend": "Protected by sea creatures.",
+    "princessResident": "682d9555679e09d3f9c0f8bf"
+  },
+  {
+    "name": "Voyager’s Keep",
+    "location": "Motunui Island",
+    "builtYear": 1500,
+    "hasMoat": false,
+    "rooms": 35,
+    "legend": "Heart of Te Fiti once stored here.",
+    "princessResident": "682d9555679e09d3f9c0f8c1"
+  },
+  {
+    "name": "Emerald Keep",
+    "location": "Enchanted Forest",
+    "builtYear": 1245,
+    "hasMoat": true,
+    "rooms": 45,
+    "legend": "Said to be guarded by a unicorn.",
+    "princessResident": "682d9555679e09d3f9c0f8c3"
+  },
+  {
+    "name": "Crystal Palace",
+    "location": "Northern Mountains",
+    "builtYear": 1502,
+    "hasMoat": false,
+    "rooms": 60,
+    "legend": "Crystals on the tower sing during full moon.",
+    "princessResident": "682ff3142afd879b8c6399e1"
+  }
+]

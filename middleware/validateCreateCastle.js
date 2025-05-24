@@ -1,0 +1,27 @@
+const validator = require("../helpers/validator");
+
+const validateCreateCastle = (req, res, next) => {
+  const rules = {
+    name: "required|string",
+    location: "required|string",
+    builtYear: "required|integer|min:1000|max:2025",
+    hasMoat: "required|boolean",
+    rooms: "required|integer|min:1",
+    legend: "required|string",
+    princessResident: "required|string" // assuming it's an ObjectId in string format
+  };
+
+  validator(req.body, rules, {}, (err, status) => {
+    if (!status) {
+      return res.status(400).json({
+        success: false,
+        message: "Validation failed",
+        data: err
+      });
+    } else {
+      next();
+    }
+  });
+};
+
+module.exports = validateCreateCastle;

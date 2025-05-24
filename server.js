@@ -1,40 +1,50 @@
-require('dotenv').config();
-const express = require('express');
-const mongoose = require('mongoose');
-const path = require('path');
-const contactsRoutes = require('./routes/contacts');
+const express = require("express");
+const bodyParser = require("body-parser");
+const { connectToDb } = require("./db/connection");
+const princessRoutes = require("./routes");
+//const swaggerUi = require("swagger-ui-express"); // eslint-disable-line no-unused-vars
+// const swaggerDocument = require('./swagger.json'); // for swagger static
+const swaggerRoutes = require("./routes/swagger"); // for swagger dynamic
+
+const jsonErrorHandler = require("./middleware/jsonErrorHandler");
 
 const app = express();
-const PORT = process.env.PORT || 3001;
 
-// Middleware
-app.use(express.static('public'));
-app.use(express.json());
 
-// Routes
-app.use('/contacts', contactsRoutes);
+/* Swagger route */
+app.use("/", swaggerRoutes); //swagger dynamic
+//app.use('/api-docs', swaggerUi.serve, swaggerUi.setup(swaggerDocument)) // swagger static
 
-// Serve front-end index.html
-app.get('/', (req, res) => {
-  res.sendFile(path.join(__dirname, 'public', 'index.html'));
+/* middleware */
+app.use(bodyParser.json());
+
+/*  catch body parser error */
+app.use(jsonErrorHandler);
+
+/* CORS */
+app.use((req, res, next) => {
+  res.setHeader("Access-Control-Allow-Origin", "*"); //header CORS (Cross-Origin Resource Sharing) : Allow all domains to access this API.
+  next();
 });
 
-// DB Connection
-mongoose.connect(process.env.MONGO_URI)
-  .then(() => {
-    console.log('✅ MongoDB connected');
-    mongoose.connection.db.listCollections().toArray((err, collections) => {
-      if (err) {
-        console.error('MongoDB connection error:', err);
-      } else {
-        console.log('Collections:', collections);
-      }
-    });
-  })
-  .catch(err => console.error('❌ MongoDB connection error:', err));
+/* Main route */
+app.use("/", princessRoutes);
 
-// Start server
-console.log('🟡 About to start the server...');
-app.listen(PORT, () => {
-  console.log(`🚀 Server is running on port ${PORT}`);
+/* Global Error Handlers - place before server*/
+process.on("uncaughtException", (err, origin) => {
+  console.error("❗ Uncaught Exception:", err.message);
+  console.error("Origin:", origin);
+});
+
+process.on("unhandledRejection", (reason, promise) => {
+  console.error("❗ Unhandled Rejection at:", promise);
+  console.error("Reason:", reason);
+});
+
+/* Start server */
+connectToDb().then(() => {
+  const PORT = process.env.PORT || 8083;
+  app.listen(PORT, () => {
+    console.log(`🚀 Server is running on port ${PORT}.`);
+  });
 });

@@ -1,0 +1,83 @@
+[
+  {
+    "name": "Ariel",
+    "movie": "The Little Mermaid",
+    "yearReleased": 1989,
+    "kingdom": "Atlantica",
+    "mainColor": "Aqua",
+    "rating": 1
+  },
+  {
+    "name": "Cinderella",
+    "movie": "Cinderella",
+    "yearReleased": 1950,
+    "kingdom": "France (implied)",
+    "mainColor": "Blue",
+    "rating": 3
+  },
+  {
+    "name": "Moana",
+    "movie": "Moana",
+    "yearReleased": 2016,
+    "kingdom": "Motunui",
+    "mainColor": "Red",
+    "rating": 2
+  },
+  {
+    "name": "Belle",
+    "movie": "Beauty and the Beast",
+    "yearReleased": 1991,
+    "kingdom": "France (unspecified village)",
+    "mainColor": "Yellow",
+    "rating": 5
+  },
+  {
+    "name": "Snow White",
+    "movie": "Snow White and the Seven Dwarfs",
+    "yearReleased": 1937,
+    "kingdom": "Unknown Germanic Kingdom",
+    "mainColor": "Blue, Red, and Yellow",
+    "rating": 4
+  },
+  {
+    "name": "Raya",
+    "movie": "Raya and the Last Dragon",
+    "yearReleased": 2021,
+    "kingdom": "Kumandra",
+    "mainColor": "Green and Brown",
+    "rating": 4
+  },
+  {
+  "name": "Mulan",
+  "movie": "Mulan",
+  "yearReleased": 1998,
+  "kingdom": "China",
+  "mainColor": "Green",
+  "rating": 4
+  },
+  {
+  "name": "Aurora",
+  "movie": "Sleeping Beauty",
+  "yearReleased": 1959,
+  "kingdom": "King Stefan's Kingdom",
+  "mainColor": "Pink and Blue",
+  "rating": 3
+  },
+  {
+  "name": "Pocahontas",
+  "movie": "Pocahontas",
+  "yearReleased": 1995,
+  "kingdom": "Powhatan Tribe",
+  "mainColor": "Tan",
+  "rating": 5
+  },
+  {
+  "name": "Elsa",
+  "movie": "Frozen",
+  "yearReleased": 2013,
+  "kingdom": "Arendelle",
+  "mainColor": "Blue",
+  "rating": 5
+  }
+]
+
