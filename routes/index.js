@@ -1,7 +1,7 @@
-const express = require("express");
+const express = require('express');
 const router = express.Router();
 
-router.use("/princess", require("./princess"));
-router.use("/castle", require("./castle"));
+router.use('/', require('./swagger'));
+router.use('/contacts', require('./contacts'));
 
 module.exports = router;
